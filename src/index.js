@@ -9,6 +9,24 @@ const init = () =>{
     // handleCharacterCard();
     fetchData()
 
+
+
+    const formInput = document.querySelector('form')
+    formInput.addEventListener('submit', (event)=>{
+        event.preventDefault()
+        let votes = event.target.children[0].value
+
+        let currentVotes = characterInfo.querySelector("#vote-count").textContent;
+
+        characterInfo.querySelector("#vote-count").textContent = parseInt(currentVotes)+parseInt(votes)
+        
+        event.target.children[0].value=''
+
+
+        console.log('vote', currentVotes, votes);
+    })
+
+
 }
 
 async function fetchData(){
