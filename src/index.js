@@ -22,8 +22,10 @@ const init = () =>{
         
         event.target.children[0].value=''
 
+    })
 
-        console.log('vote', currentVotes, votes);
+    const reset = characterInfo.querySelector("#reset-btn").addEventListener('click', ()=>{
+        characterInfo.querySelector("#vote-count").textContent = 0
     })
 
 
